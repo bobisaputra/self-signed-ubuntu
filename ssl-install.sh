@@ -4,7 +4,7 @@ echo ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt; > /etc/nginx/snippets/
 echo ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key; >> /etc/nginx/snippets/self-signed.conf
 echo ssl_protocols TLSv1 TLSv1.1 TLSv1.2; > /etc/nginx/snippets/ssl-params.conf
 echo ssl_prefer_server_ciphers on; >> /etc/nginx/snippets/ssl-params.conf
-echo echo ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH"; >> /etc/nginx/snippets/ssl-params.conf
+echo ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH"; >> /etc/nginx/snippets/ssl-params.conf
 echo ssl_ecdh_curve secp384r1; >> /etc/nginx/snippets/ssl-params.conf
 echo ssl_session_cache shared:SSL:10m; >> /etc/nginx/snippets/ssl-params.conf
 echo ssl_session_tickets off; >> /etc/nginx/snippets/ssl-params.conf
