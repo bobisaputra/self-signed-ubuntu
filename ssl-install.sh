@@ -4,7 +4,7 @@ echo ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt; > /etc/nginx/snippets/
 echo ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key; >> /etc/nginx/snippets/self-signed.conf
 echo ssl_protocols TLSv1 TLSv1.1 TLSv1.2; > /etc/nginx/snippets/ssl-params.conf
 echo ssl_prefer_server_ciphers on; >> /etc/nginx/snippets/ssl-params.conf
-echo ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH"; >> /etc/nginx/snippets/ssl-params.conf
+echo ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !RC4"; >> /etc/nginx/snippets/ssl-params.conf
 echo ssl_ecdh_curve secp384r1; >> /etc/nginx/snippets/ssl-params.conf
 echo ssl_session_cache shared:SSL:10m; >> /etc/nginx/snippets/ssl-params.conf
 echo ssl_session_tickets off; >> /etc/nginx/snippets/ssl-params.conf
@@ -14,7 +14,7 @@ echo resolver 8.8.8.8 8.8.4.4 valid=300s; >> /etc/nginx/snippets/ssl-params.conf
 echo resolver_timeout 5s; >> /etc/nginx/snippets/ssl-params.conf
 
 #add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
-echo add_header Strict-Transport-Security "max-age=63072000; includeSubdomains"; >> /etc/nginx/snippets/ssl-params.conf
+echo add_header Strict-Transport-Security "max-age=31536000; includeSubdomains"; >> /etc/nginx/snippets/ssl-params.conf
 echo add_header X-Frame-Options DENY; >> /etc/nginx/snippets/ssl-params.conf
 echo add_header X-Content-Type-Options nosniff; >> /etc/nginx/snippets/ssl-params.conf
 
