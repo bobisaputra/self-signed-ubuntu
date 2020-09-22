@@ -21,6 +21,7 @@ echo add_header X-Content-Type-Options nosniff; >> /etc/nginx/snippets/ssl-param
 echo ssl_dhparam /etc/ssl/certs/dhparam.pem; >> /etc/nginx/snippets/ssl-params.conf
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
 
+#write on
 #sudo nano /etc/nginx/sites-available/default
 #server {
 
@@ -28,6 +29,9 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ba
 
    # listen 443 ssl http2 default_server;
    # listen [::]:443 ssl http2 default_server;
+   # include snippets/self-signed.conf;
+   # include snippets/ssl-params.conf;
+   # server_name server_domain_or_IP;
    # include snippets/self-signed.conf;
    # include snippets/ssl-params.conf;
  # }
