@@ -1,3 +1,3 @@
-# self-signed-ubuntu
+# B+ SSL self-signed-ubuntu
 
 used for create ssl
